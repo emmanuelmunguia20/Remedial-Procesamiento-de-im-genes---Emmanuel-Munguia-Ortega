@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
+import os
 
 
 img1 = cv2.imread('input1.jpg')
@@ -92,3 +93,20 @@ plt.imshow(not_img_rgb)
 plt.title('Bitwise NOT (Image 1)')
 plt.axis('off')
 plt.show()
+
+
+
+carpeta_resultados = "imagenes_modificadas"
+os.makedirs(carpeta_resultados, exist_ok=True)
+
+cv2.imwrite(os.path.join(carpeta_resultados, "01_imagenes_entrada.jpg"), side_by_side)
+cv2.imwrite(os.path.join(carpeta_resultados, "02_suma.jpg"), added)
+cv2.imwrite(os.path.join(carpeta_resultados, "03_suma_ponderada.jpg"), weighted)
+cv2.imwrite(os.path.join(carpeta_resultados, "04_resta.jpg"), subtracted)
+cv2.imwrite(os.path.join(carpeta_resultados, "05_and.jpg"), and_img)
+cv2.imwrite(os.path.join(carpeta_resultados, "06_or.jpg"), or_img)
+cv2.imwrite(os.path.join(carpeta_resultados, "07_xor.jpg"), xor_img)
+cv2.imwrite(os.path.join(carpeta_resultados, "08_not.jpg"), not_img)
+
+
+
